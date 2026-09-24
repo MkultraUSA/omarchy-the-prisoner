@@ -46,4 +46,5 @@ sha256sum "$HOME/.local/bin/prisoner-screensaver" "$HOME/.local/bin/omarchy-laun
 
 omarchy theme set the-prisoner
 omarchy-shell -q shell rescanPlugins
+omarchy plugin enable uk.co.mkultrausa.the-prisoner-seaside || true
 printf '\nInstalled The Prisoner. Preview: prisoner-screensaver force\nBackup: %s\n' "$(cat "$state_dir/backup-path")"

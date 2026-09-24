@@ -13,7 +13,8 @@ architecture, scarlet, golden yellow, blue, green, and Rover crossing the Villag
   switching from a dark theme without restarting those applications.
 - Original AI-generated Village wallpaper, a matching empty animation scene,
   and a seaside companion view for the compact right-hand display. The companion
-  is also a user-level Omarchy plugin, so it remains visible during regular use.
+  is also an enabled user-level Omarchy plugin, so it remains visible during
+  regular use.
 - Editable Number Six and penny-farthing SVG graphics, plus transparent PNGs.
 - A graphical Quickshell screensaver: a shaded white Rover crosses the virtual
   desktop, wobbles, changes direction, and makes a larger pass every third trip.
