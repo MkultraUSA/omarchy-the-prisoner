@@ -1,8 +1,9 @@
 # Image generation record
 
-Generated using the built-in image generation tool. Final raster assets are
-1672 × 941 pixels; the requested 4K size was not returned by the tool. Files are
-kept at their native resolution rather than labelled as 4K.
+Generated using the built-in image generation tool. The initial raster artwork
+was returned at 1672 × 941 pixels, then carefully resampled with a Lanczos
+filter into 3840 × 2160 master files for distribution. The published assets are
+therefore sized for common 4K displays while preserving the original scenes.
 
 ## Village wallpaper
 

@@ -11,7 +11,7 @@ architecture, scarlet, golden yellow, blue, green, and Rover crossing the Villag
 - Terminals use cream text on charcoal with bright Village accents. This keeps
   existing terminal applications with dark input/message panels readable when
   switching from a dark theme without restarting those applications.
-- Original AI-generated Village wallpaper, a matching empty animation scene,
+- Original 3840×2160 Village wallpaper, a matching empty animation scene,
   and a seaside companion view for the compact right-hand display. The companion
   is also an enabled user-level Omarchy plugin, so it remains visible during
   regular use.
@@ -73,6 +73,8 @@ and is excluded from the release archive.
 - Palette: `theme/colors.toml`
 - Terminal palettes: `theme/alacritty.toml`, `ghostty.conf`, `foot.ini`, `kitty.conf`
 - Desktop background: `theme/backgrounds/`
+- All shipped desktop and screensaver raster artwork is 3840×2160, so it can
+  scale cleanly on common 1080p, 1440p, and 4K displays.
 - Companion display background: `plugin/the-prisoner-seaside/` renders
   `village-seaside.png` permanently on the right-most display when two or more
   monitors are connected. Single-monitor setups retain the main Village image;
