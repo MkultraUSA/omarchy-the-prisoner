@@ -19,7 +19,9 @@ Item {
       exclusionMode: ExclusionMode.Ignore
 
       WlrLayershell.namespace: "the-prisoner-seaside-background"
-      WlrLayershell.layer: WlrLayer.Background
+      // Omarchy's built-in wallpaper occupies the Background layer. Bottom
+      // keeps this companion view above that wallpaper but below all windows.
+      WlrLayershell.layer: WlrLayer.Bottom
       WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
 
       Image {
