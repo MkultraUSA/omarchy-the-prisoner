@@ -4,7 +4,7 @@
   "name": "The Prisoner Seaside Background",
   "version": "1.0.0",
   "author": "MkultraUSA",
-  "description": "A companion Village seaside view for the DP-3 display.",
+  "description": "A companion Village seaside view for the right-most display.",
   "kinds": [
     "service"
   ],

@@ -73,9 +73,10 @@ and is excluded from the release archive.
 - Palette: `theme/colors.toml`
 - Terminal palettes: `theme/alacritty.toml`, `ghostty.conf`, `foot.ini`, `kitty.conf`
 - Desktop background: `theme/backgrounds/`
-- Compact right display background: `plugin/the-prisoner-seaside/` renders
-  `village-seaside.png` permanently on the `DP-3` output; the screensaver uses
-  its matching copy in `screensaver/village-seaside.png`.
+- Companion display background: `plugin/the-prisoner-seaside/` renders
+  `village-seaside.png` permanently on the right-most display when two or more
+  monitors are connected. Single-monitor setups retain the main Village image;
+  the screensaver follows the same rule using its matching copy.
 - Rover motion, scale, and rendering: `screensaver/shell.qml`
 - A pass takes 34 seconds. Rover is 29% of desktop height normally and 67% on
   close passes. Frames update at approximately 30 fps.

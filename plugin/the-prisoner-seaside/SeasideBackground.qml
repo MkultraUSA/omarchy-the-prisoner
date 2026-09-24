@@ -5,6 +5,16 @@ import QtQuick
 // A user-level companion layer for the compact right display. Omarchy's
 // background service continues to provide the primary display's wallpaper.
 Item {
+  id: root
+  // The companion scene belongs on the right-most display. This makes the
+  // theme portable: a single-monitor setup keeps the main Village image,
+  // while any multi-monitor setup gets the seaside continuation.
+  readonly property var companionScreen: Quickshell.screens.length > 1
+    ? Quickshell.screens.reduce((rightmost, candidate) =>
+        candidate.x > rightmost.x || (candidate.x === rightmost.x && candidate.y > rightmost.y)
+          ? candidate : rightmost, Quickshell.screens[0])
+    : null
+
   Variants {
     model: Quickshell.screens
 
@@ -13,7 +23,7 @@ Item {
       required property var modelData
 
       screen: modelData
-      visible: modelData.name === "DP-3"
+      visible: modelData === root.companionScreen
       anchors { top: true; bottom: true; left: true; right: true }
       color: "transparent"
       exclusionMode: ExclusionMode.Ignore

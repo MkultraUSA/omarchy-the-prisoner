@@ -16,6 +16,11 @@ ShellRoot {
     readonly property real topEdge: Math.min.apply(null, Quickshell.screens.map(s => s.y))
     readonly property real desktopWidth: Math.max.apply(null, Quickshell.screens.map(s => s.x + s.width)) - leftEdge
     readonly property real desktopHeight: Math.max.apply(null, Quickshell.screens.map(s => s.y + s.height)) - topEdge
+    readonly property var companionScreen: Quickshell.screens.length > 1
+        ? Quickshell.screens.reduce((rightmost, candidate) =>
+            candidate.x > rightmost.x || (candidate.x === rightmost.x && candidate.y > rightmost.y)
+              ? candidate : rightmost, Quickshell.screens[0])
+        : null
     readonly property real pass: Math.floor(elapsed / 34)
     readonly property real progress: (elapsed % 34) / 34
     readonly property real travel: progress + 0.024 * Math.sin(progress * Math.PI * 4)
@@ -91,9 +96,9 @@ ShellRoot {
 
                 Image {
                     anchors.fill: parent
-                    // The compact right display gets a companion view across the estuary;
-                    // the primary display remains in the original Village courtyard.
-                    source: Qt.resolvedUrl(window.targetScreen.name === "DP-3" ? "village-seaside.png" : "village-empty.png")
+                    // The right-most display gets a companion view across the estuary;
+                    // a single-monitor setup stays in the original Village courtyard.
+                    source: Qt.resolvedUrl(window.targetScreen === root.companionScreen ? "village-seaside.png" : "village-empty.png")
                     fillMode: Image.PreserveAspectCrop
                     asynchronous: false
                 }
