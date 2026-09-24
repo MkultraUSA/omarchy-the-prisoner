@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384" viewBox="0 0 512 384">
+ <title>The Prisoner — penny-farthing motif</title>
+ <g fill="none" stroke="#eee7d3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="177" cy="223" r="132"/><circle cx="423" cy="308" r="47"/>
+  <path d="M177 223V48h-44m44 45 246 215M177 91l40-42h48M156 223h42"/>
+  <g stroke-width="2" opacity=".6"><path d="M45 223h264M177 91v264M84 130l186 186M84 316l186-186M55 173l244 100M55 273l244-100M127 101l100 244M127 345l100-244"/></g>
+ </g>
+</svg>

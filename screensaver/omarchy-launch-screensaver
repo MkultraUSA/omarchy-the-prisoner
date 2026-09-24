@@ -1,0 +1,12 @@
+#!/bin/bash
+# The Prisoner: graphical Rover only while this theme is selected.
+theme_file="$HOME/.local/state/omarchy/current/theme.name"
+if [[ -r $theme_file && $(<"$theme_file") == the-prisoner ]]; then
+  exec "$HOME/.local/bin/prisoner-screensaver" "$@"
+fi
+backup_file="$HOME/.local/state/the-prisoner/backup-path"
+if [[ -r $backup_file ]]; then
+  previous="$(<"$backup_file")/.local/bin/omarchy-launch-screensaver"
+  [[ ! -x $previous ]] || exec "$previous" "$@"
+fi
+exec /usr/share/omarchy/bin/omarchy-launch-screensaver "$@"

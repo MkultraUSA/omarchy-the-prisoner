@@ -1,0 +1,48 @@
+# The Prisoner: cream text on charcoal for terminal/TUI compatibility.
+[colors.primary]
+background = "#191c1a"
+foreground = "#eee7d3"
+
+[colors.cursor]
+text = "#191c1a"
+cursor = "#fff7e1"
+
+[colors.vi_mode_cursor]
+text = "#191c1a"
+cursor = "#fff7e1"
+
+[colors.search.matches]
+foreground = "#191c1a"
+background = "#e8c65e"
+
+[colors.search.focused_match]
+foreground = "#191c1a"
+background = "#f17a74"
+
+[colors.footer_bar]
+foreground = "#191c1a"
+background = "#eee7d3"
+
+[colors.selection]
+text = "#fff7e1"
+background = "#43534b"
+
+[colors.normal]
+black = "#191c1a"
+red = "#f17a74"
+green = "#98c883"
+yellow = "#e8c65e"
+blue = "#98b5eb"
+magenta = "#c0a1db"
+cyan = "#88c7c5"
+white = "#eee7d3"
+
+[colors.bright]
+black = "#8c9587"
+red = "#ff9790"
+green = "#b5db97"
+yellow = "#ffe089"
+blue = "#b7ceff"
+magenta = "#d8b9ed"
+cyan = "#a7e1da"
+white = "#fff7e1"

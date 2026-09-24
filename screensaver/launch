@@ -1,0 +1,19 @@
+#!/bin/bash
+set -euo pipefail
+
+# Named config path also makes Omarchy's existing lock-time pkill find us.
+config="$HOME/.config/quickshell/org.omarchy.screensaver.the-prisoner"
+
+if [[ ${1:-} == --stop ]]; then
+  exec quickshell ipc --path "$config" call rover stop
+fi
+
+if [[ $(timeout 2 omarchy-shell lock isLocked 2>/dev/null || true) == true ]]; then
+  exit 0
+fi
+
+if [[ ${1:-} != force ]] && omarchy-toggle-enabled screensaver-off; then
+  exit 0
+fi
+
+exec quickshell --no-duplicate --path "$config"
