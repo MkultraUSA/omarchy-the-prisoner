@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "uk.co.mkultrausa.the-prisoner-seaside",
+  "name": "The Prisoner Seaside Background",
+  "version": "1.0.0",
+  "author": "MkultraUSA",
+  "description": "A companion Village seaside view for the DP-3 display.",
+  "kinds": [
+    "service"
+  ],
+  "entryPoints": {
+    "service": "SeasideBackground.qml"
+  }
+}

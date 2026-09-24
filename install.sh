@@ -3,12 +3,13 @@ set -euo pipefail
 source_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 theme_dir="$HOME/.config/omarchy/themes/the-prisoner"
 saver_dir="$HOME/.config/quickshell/org.omarchy.screensaver.the-prisoner"
+plugin_dir="$HOME/.config/omarchy/plugins/the-prisoner-seaside"
 state_dir="$HOME/.local/state/the-prisoner"
 
 for command in omarchy quickshell python3; do
   command -v "$command" >/dev/null || { echo "Missing requirement: $command" >&2; exit 1; }
 done
-[[ -s "$source_dir/theme/backgrounds/01-the-village.png" && -s "$source_dir/screensaver/village-empty.png" && -s "$source_dir/screensaver/village-seaside.png" ]] || {
+[[ -s "$source_dir/theme/backgrounds/01-the-village.png" && -s "$source_dir/screensaver/village-empty.png" && -s "$source_dir/screensaver/village-seaside.png" && -s "$source_dir/plugin/the-prisoner-seaside/SeasideBackground.qml" && -s "$source_dir/plugin/the-prisoner-seaside/village-seaside.png" ]] || {
   echo "The wallpaper assets are missing; use the complete release." >&2; exit 1;
 }
 
@@ -17,7 +18,7 @@ if [[ ! -f "$state_dir/backup-path" ]]; then
   backup="$state_dir/backup-$(date +%Y%m%d-%H%M%S)"
   mkdir -p "$backup"
   # Record every directly replaced item and the active theme before installing.
-  for relative in .config/omarchy/themes/the-prisoner .config/quickshell/org.omarchy.screensaver.the-prisoner .local/bin/omarchy-launch-screensaver .local/bin/prisoner-screensaver .local/state/omarchy/current .config/omarchy/shell.json; do
+  for relative in .config/omarchy/themes/the-prisoner .config/quickshell/org.omarchy.screensaver.the-prisoner .config/omarchy/plugins/the-prisoner-seaside .local/bin/omarchy-launch-screensaver .local/bin/prisoner-screensaver .local/state/omarchy/current .config/omarchy/shell.json; do
     if [[ -e "$HOME/$relative" || -L "$HOME/$relative" ]]; then
       mkdir -p "$backup/$(dirname "$relative")"
       cp -a "$HOME/$relative" "$backup/$relative"
@@ -35,12 +36,14 @@ if [[ ! -f "$state_dir/backup-path" ]]; then
   printf '%s\n' "$backup" > "$state_dir/backup-path"
 fi
 
-mkdir -p "$theme_dir" "$saver_dir"
+mkdir -p "$theme_dir" "$saver_dir" "$plugin_dir"
 cp -a "$source_dir/theme/." "$theme_dir/"
 cp "$source_dir/screensaver/shell.qml" "$source_dir/screensaver/village-empty.png" "$source_dir/screensaver/village-seaside.png" "$saver_dir/"
+cp -a "$source_dir/plugin/the-prisoner-seaside/." "$plugin_dir/"
 install -m755 "$source_dir/screensaver/launch" "$HOME/.local/bin/prisoner-screensaver"
 install -m755 "$source_dir/screensaver/omarchy-launch-screensaver" "$HOME/.local/bin/omarchy-launch-screensaver"
 sha256sum "$HOME/.local/bin/prisoner-screensaver" "$HOME/.local/bin/omarchy-launch-screensaver" > "$state_dir/installed-scripts.sha256"
 
 omarchy theme set the-prisoner
+omarchy-shell -q shell rescanPlugins
 printf '\nInstalled The Prisoner. Preview: prisoner-screensaver force\nBackup: %s\n' "$(cat "$state_dir/backup-path")"
