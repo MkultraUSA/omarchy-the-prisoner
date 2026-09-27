@@ -107,7 +107,7 @@ and is excluded from the release archive.
 - Terminal palettes (full install): `alacritty.toml`, `ghostty.conf`, `foot.ini`, `kitty.conf`
 - Dark Neovim palette (full install): `neovim.lua`
 - Desktop backgrounds: `backgrounds/`. There are six, and you can cycle through them with `omarchy theme bg next`:
-  `01-the-village`, `02-the-open-road` (the Seven on the coast road), `03-village-taxi-rank`
+  `01-the-village`, `02-the-back-road` (the Seven on the coast road), `03-village-taxi-rank`
   (Mini Mokes), `04-be-seeing-you-shadow`, `05-be-seeing-you` and `06-penny-farthing-village`. Omarchy's lock screen shows the
   current background. Add your own wallpapers for this theme, without changing the repo, in
   `~/.config/omarchy/backgrounds/the-prisoner/`.

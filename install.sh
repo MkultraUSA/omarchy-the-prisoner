@@ -38,6 +38,8 @@ if [[ ! -f "$state_dir/backup-path" ]]; then
 fi
 
 mkdir -p "$theme_dir" "$saver_dir" "$plugin_dir"
+# Replace the backgrounds folder so wallpapers removed from the theme do not linger.
+rm -rf "$theme_dir/backgrounds"
 # The theme lives at the repository root so `omarchy theme install` also works.
 # Copy only the theme files; the installed copy has no .git, so Omarchy keeps
 # the hand-tuned terminal palettes and dark Neovim colors.
