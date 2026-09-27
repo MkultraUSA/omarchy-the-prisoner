@@ -113,6 +113,11 @@ and is excluded from the release archive.
 - Lock screen: `lock-background.jpg`. Omarchy blurs the wallpaper on its lock screen, so an optional
   patch shows this image sharp instead. See `extras/lock/README.md` (opt-in; it is not applied by
   `install.sh`).
+- "Be Seeing You" bar widget (full install): the Village salute in your bar; click it to lock the
+  screen. The installer copies it in without changing your bar. To add it next to the power button:
+  `omarchy bar put uk.co.mkultrausa.be-seeing-you --before omarchy.power`
+- btop colours: `btop.theme`. Cream stucco and umbrella gold, with load running from the Seven's
+  green through gold to Village scarlet.
 - Boot and login logo: `unlock.png` (the salute and wordmark, source `extras/assets/unlock.svg`).
   Apply it to the boot and disk-unlock screen with `omarchy plymouth set by theme the-prisoner`
   (asks for your password).

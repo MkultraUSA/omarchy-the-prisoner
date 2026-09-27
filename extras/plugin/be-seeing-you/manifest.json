@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "uk.co.mkultrausa.be-seeing-you",
+  "name": "Be Seeing You",
+  "version": "1.0.0",
+  "author": "MkultraUSA",
+  "description": "The Village salute in your bar. Click it to lock the screen: be seeing you.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Be Seeing You",
+    "description": "Village salute; click to lock the screen",
+    "category": "System",
+    "allowMultiple": false
+  }
+}

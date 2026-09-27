@@ -13,7 +13,7 @@ fi
 # Archive the installed files rather than deleting them.
 archive="$state_dir/removed-$(date +%Y%m%d-%H%M%S)"
 mkdir -p "$archive"
-for relative in .config/omarchy/themes/the-prisoner .config/quickshell/org.omarchy.screensaver.the-prisoner .config/omarchy/plugins/the-prisoner-seaside .local/bin/omarchy-launch-screensaver .local/bin/prisoner-screensaver; do
+for relative in .config/omarchy/themes/the-prisoner .config/quickshell/org.omarchy.screensaver.the-prisoner .config/omarchy/plugins/the-prisoner-seaside .config/omarchy/plugins/be-seeing-you .local/bin/omarchy-launch-screensaver .local/bin/prisoner-screensaver; do
   if [[ -e "$HOME/$relative" || -L "$HOME/$relative" ]]; then
     mkdir -p "$archive/$(dirname "$relative")"
     mv "$HOME/$relative" "$archive/$relative"

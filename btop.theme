@@ -1,0 +1,81 @@
+# The Prisoner: btop in the colours of the Village and Number Six's Seven.
+# Cream stucco background and umbrella-gold meters; load runs from the
+# Seven's green, through gold, to Village scarlet. Colour only, so it also
+# applies when the theme is installed with `omarchy theme install`.
+
+# Main background and text
+theme[main_bg]="#f4ecd8"
+theme[main_fg]="#282e28"
+
+# Box titles, keyboard-shortcut highlight
+theme[title]="#282e28"
+theme[hi_fg]="#b82e36"
+
+# Selected process row: umbrella gold with scarlet text
+theme[selected_bg]="#e8d494"
+theme[selected_fg]="#b82e36"
+
+# Inactive text, text on graphs, meter background
+theme[inactive_fg]="#a99e80"
+theme[graph_text]="#4d5849"
+theme[meter_bg]="#e8d494"
+theme[proc_misc]="#32674b"
+
+# Box outlines: CPU in the Seven's green, memory in gold, network in the
+# bay's blue, processes in Village scarlet
+theme[cpu_box]="#32674b"
+theme[mem_box]="#856012"
+theme[net_box]="#216b72"
+theme[proc_box]="#b82e36"
+theme[div_line]="#cbbf9f"
+
+# Temperature: green -> gold -> scarlet
+theme[temp_start]="#32674b"
+theme[temp_mid]="#856012"
+theme[temp_end]="#b82e36"
+
+# CPU graph: the Seven's green -> umbrella gold -> Village scarlet
+theme[cpu_start]="#32674b"
+theme[cpu_mid]="#856012"
+theme[cpu_end]="#b82e36"
+
+# Memory and disk meters
+theme[free_start]="#216b72"
+theme[free_mid]="#315d99"
+theme[free_end]="#284f92"
+
+theme[cached_start]="#856012"
+theme[cached_mid]="#a44d25"
+theme[cached_end]="#77543a"
+
+theme[available_start]="#216b72"
+theme[available_mid]="#32674b"
+theme[available_end]="#285b3d"
+
+theme[used_start]="#32674b"
+theme[used_mid]="#856012"
+theme[used_end]="#b82e36"
+
+# Network: download is the bay (teal -> blue), upload the Seven (green -> gold)
+theme[download_start]="#216b72"
+theme[download_mid]="#315d99"
+theme[download_end]="#284f92"
+
+theme[upload_start]="#32674b"
+theme[upload_mid]="#856012"
+theme[upload_end]="#a44d25"
+
+# Per-process mini graphs and bars
+theme[process_start]="#32674b"
+theme[process_mid]="#856012"
+theme[process_end]="#b82e36"
+
+# Graph shading from background to foreground
+theme[gradient_color_0]="#f4ecd8"
+theme[gradient_color_1]="#fff8e9"
+theme[gradient_color_2]="#e8d494"
+theme[gradient_color_3]="#cbbf9f"
+theme[gradient_color_4]="#65694e"
+theme[gradient_color_5]="#282e28"
+theme[gradient_color_6]="#4d5849"
+theme[gradient_color_7]="#17251d"

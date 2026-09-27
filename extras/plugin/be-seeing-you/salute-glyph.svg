@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+ <title>Be seeing you: bar glyph</title>
+ <g transform="translate(1.6 1) scale(0.9)">
+ <g fill="#000">
+  <!-- Middle, ring and little fingers, fanned upward -->
+  <rect x="2.6" y="4" width="3" height="11" rx="1.5" transform="rotate(-20 4.1 15)"/>
+  <rect x="6.6" y="0.8" width="3.1" height="13" rx="1.55" transform="rotate(-7 8.15 14)"/>
+  <rect x="10.6" y="1.4" width="3" height="12" rx="1.5" transform="rotate(6 12.1 13.4)"/>
+  <!-- Palm -->
+  <path d="M4.2 12.6 H14.2 L14.6 17 Q14.4 22.6 9.4 22.6 Q4.6 22.4 4.2 17.4 Z"/>
+ </g>
+ <!-- Thumb and forefinger making the "O", up at fingertip height -->
+ <circle cx="17.4" cy="9.6" r="3.9" fill="none" stroke="#000" stroke-width="2.3"/>
+ <path d="M14.2 15.2 Q15.6 14.8 15.8 13" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round"/>
+ </g>
+</svg>
