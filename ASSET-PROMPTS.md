@@ -58,8 +58,8 @@ calm enough for desktop windows.
 
 Delivered as `backgrounds/02-the-open-road.jpg`, `03-village-taxi-rank.jpg`,
 `04-be-seeing-you-shadow.jpg` and `05-be-seeing-you.jpg`, plus the transparent icons
-`extras/assets/salute.png` and `extras/assets/seven.png`. A small roundel on the car's nose
-and a side emblem in `02` were painted out so the car stays unbadged. Wallpapers are stored
+`extras/assets/salute.png` and `extras/assets/seven.png`. The cars keep their original badges
+(non-commercial fan art; owner's decision 2026-09-27). Wallpapers are stored
 as quality-92 JPEG (visually identical, about 4.5 times smaller than PNG).
 
 ## Corrections for the next art pass (2026-09-27, from Kevin's review)
@@ -72,7 +72,7 @@ Apply these to every image with the car:
 - **Right-hand drive.** It is a British car: the steering wheel and driver sit on the RIGHT.
 - **No driverless cars in motion.** Either park it (no driver) or show a driver from behind,
   small and anonymous (no face, no recognisable hair or profile).
-- **Unbadged.** No Lotus roundel, no KAR 120C plate.
+- **Badges are fine** (owner's decision 2026-09-27): a Lotus roundel may appear.
 - **Keep the car and "the man" apart.** Do not put the car in the same picture as the
   figure in the piped blazer. For public release, the figure must not look like the actor.
   Prefer a generic figure seen from far behind, or just the salute (hand or shadow).
