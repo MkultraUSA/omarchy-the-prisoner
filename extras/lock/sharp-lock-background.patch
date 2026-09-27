@@ -1,0 +1,86 @@
+--- Service.qml
++++ Service.qml
+@@ -28,6 +28,8 @@
+   property string failureMessage: ""
+   property int failedAttempts: 0
+   property string backgroundPath: ""
++  // True when the current theme ships lock-background.{png,jpg,jpeg,webp}.
++  property bool sharpBackground: false
+   property int backgroundVersion: 0
+   property string lastEvent: "init"
+   property string lastEventAt: ""
+@@ -270,6 +272,7 @@
+         anchors.fill: parent
+         backgroundPath: root.backgroundPath
+         backgroundVersion: root.backgroundVersion
++        sharpBackground: root.sharpBackground
+         fingerprintConfigured: root.fingerprintConfigured
+         authenticatingPassword: root.authenticatingPassword
+         failureMessage: root.failureMessage
+@@ -300,6 +303,7 @@
+       anchors.fill: parent
+       backgroundPath: root.backgroundPath
+       backgroundVersion: root.backgroundVersion
++        sharpBackground: root.sharpBackground
+       fingerprintConfigured: root.fingerprintConfigured
+       authenticatingPassword: false
+       failureMessage: ""
+@@ -362,12 +366,18 @@
+ 
+   Process {
+     id: readlinkProc
+-    command: ["readlink", "-f", root.currentBackgroundLink]
++    // A theme may ship lock-background.{png,jpg,jpeg,webp}; it is shown sharp.
++    // Otherwise fall back to the blurred desktop background as before.
++    command: ["bash", "-c", "t=\"$1/omarchy/current/theme\"; for f in \"$t\"/lock-background.{png,jpg,jpeg,webp}; do [[ -f $f ]] && { echo \"sharp $(readlink -f \"$f\")\"; exit; }; done; echo \"blur $(readlink -f \"$2\")\"", "lock-bg", root.stateHome, root.currentBackgroundLink]
+     stdout: StdioCollector {
+       waitForEnd: true
+       onStreamFinished: {
+-        var next = String(text || "").trim()
+-        if (next !== root.backgroundPath) {
++        var out = String(text || "").trim()
++        var space = out.indexOf(" ")
++        var sharp = out.slice(0, space) === "sharp"
++        var next = out.slice(space + 1)
++        if (next !== root.backgroundPath || sharp !== root.sharpBackground) {
++          root.sharpBackground = sharp
+           root.backgroundPath = next
+           root.backgroundVersion += 1
+         }
+--- LockView.qml
++++ LockView.qml
+@@ -8,6 +8,7 @@
+ 
+   property string backgroundPath: ""
+   property int backgroundVersion: 0
++  property bool sharpBackground: false
+   property bool fingerprintConfigured: false
+   property bool authenticatingPassword: false
+   property string failureMessage: ""
+@@ -105,11 +106,11 @@
+       anchors.fill: wallpaper
+       source: wallpaper
+       autoPaddingEnabled: false
+-      blurEnabled: root.loadBackground && wallpaper.status === Image.Ready
++      blurEnabled: !root.sharpBackground && root.loadBackground && wallpaper.status === Image.Ready
+       blur: 1.0
+       blurMax: 128
+       blurMultiplier: 1.25
+-      contrast: -0.08
++      contrast: root.sharpBackground ? 0 : -0.08
+     }
+ 
+     MouseArea {
+@@ -123,7 +124,11 @@
+       id: inputField
+       width: root.fieldWidth
+       height: root.fieldHeight
+-      anchors.centerIn: parent
++      // Over a sharp theme image, sit in the lower part of the screen so the art stays visible.
++      anchors.horizontalCenter: parent.horizontalCenter
++      anchors.verticalCenter: root.sharpBackground ? undefined : parent.verticalCenter
++      anchors.bottom: root.sharpBackground ? parent.bottom : undefined
++      anchors.bottomMargin: root.sharpBackground ? Math.round(parent.height * 0.12) : 0
+       color: Color.lock.background
+       borderSpec: root.inputBorderSpec
+       radius: Style.cornerRadius
