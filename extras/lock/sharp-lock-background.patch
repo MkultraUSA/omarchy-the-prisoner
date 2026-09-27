@@ -80,7 +80,7 @@
 +      anchors.horizontalCenter: parent.horizontalCenter
 +      anchors.verticalCenter: root.sharpBackground ? undefined : parent.verticalCenter
 +      anchors.bottom: root.sharpBackground ? parent.bottom : undefined
-+      anchors.bottomMargin: root.sharpBackground ? Math.round(parent.height * 0.12) : 0
++      anchors.bottomMargin: root.sharpBackground ? Math.round(parent.height * 0.045) : 0
        color: Color.lock.background
        borderSpec: root.inputBorderSpec
        radius: Style.cornerRadius
