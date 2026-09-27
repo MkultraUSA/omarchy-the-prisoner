@@ -61,3 +61,24 @@ Delivered as `backgrounds/02-the-open-road.jpg`, `03-village-taxi-rank.jpg`,
 `extras/assets/salute.png` and `extras/assets/seven.png`. A small roundel on the car's nose
 and a side emblem in `02` were painted out so the car stays unbadged. Wallpapers are stored
 as quality-92 JPEG (visually identical, about 4.5 times smaller than PNG).
+
+## Corrections for the next art pass (2026-09-27, from Kevin's review)
+
+Apply these to every image with the car:
+
+- **One consistent colour scheme.** Check a reference photo of the original car first
+  (believed to be dark green with a yellow nose cone), then use exactly that scheme in every
+  image. The icon, the open-road wallpaper and the lock image must all match.
+- **Right-hand drive.** It is a British car: the steering wheel and driver sit on the RIGHT.
+- **No driverless cars in motion.** Either park it (no driver) or show a driver from behind,
+  small and anonymous (no face, no recognisable hair or profile).
+- **Unbadged.** No Lotus roundel, no KAR 120C plate.
+- **Keep the car and "the man" apart.** Do not put the car in the same picture as the
+  figure in the piped blazer. For public release, the figure must not look like the actor.
+  Prefer a generic figure seen from far behind, or just the salute (hand or shadow).
+- **Penny-farthing.** Bring it back in at least one scene (for example leaning against a
+  Village balustrade, or ridden across the piazza), plain black with a cream seat.
+
+Replacements needed: `02-the-open-road` (right-hand drive, consistent colours, parked or
+driven by an anonymous figure), `05-be-seeing-you` / `lock-background` (no car, anonymous
+figure or salute only), and optionally a new penny-farthing scene.
