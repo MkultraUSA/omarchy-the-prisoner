@@ -141,3 +141,8 @@ and is excluded from the release archive.
 
 Re-run the installer after editing the source. Installation does not publish or
 upload anything. The original Matrix screensaver script remains untouched.
+
+## License
+
+MIT; see `LICENSE`. This is unofficial fan work and is not affiliated with the
+programme's rights holders or Portmeirion.
