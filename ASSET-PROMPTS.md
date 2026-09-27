@@ -82,3 +82,34 @@ Apply these to every image with the car:
 Replacements needed: `02-the-open-road` (right-hand drive, consistent colours, parked or
 driven by an anonymous figure), `05-be-seeing-you` / `lock-background` (no car, anonymous
 figure or salute only), and optionally a new penny-farthing scene.
+
+## Regeneration prompts (2026-09-27)
+
+Style reference: attach `backgrounds/01-the-village.png`. Car scheme, matching `extras/assets/seven.png`:
+yellow body, dark green nose cone and cycle wings. Badges are allowed; no number plate.
+
+### Replace `02-the-open-road`
+
+> Painterly illustration, 3840x2160, sunlit late-afternoon, style of a 1960s travel poster with soft
+> brushwork (match the attached reference wallpaper's style and palette). A small British open-wheel,
+> open-cockpit 1960s clubman sports car in the Lotus Seven style drives along a winding coastal road
+> above a turquoise bay, heading toward an Italianate village on a wooded headland in the distance.
+> Stone walls, pink wildflowers, cypress trees, cliffs. The car: bright yellow body, dark green nose
+> cone, dark green cycle wings over each wheel, chrome headlamps on stalks, wire wheels, side exhaust.
+> RIGHT-HAND DRIVE: the steering wheel and the driver are on the car's RIGHT side. The driver: seen
+> from behind and a little to the side, small in the frame, dark jacket, no face visible, no
+> recognizable features. Gentle motion blur on the road and wheels. Composition: car in the
+> lower-middle; leave the left third and top third calm for desktop icons and windows. No text, no
+> watermark, no number plate.
+
+### Replace `05-be-seeing-you` / `lock-background` (optional; a cropped no-car version exists)
+
+> Painterly illustration, 3840x2160, golden-hour, 1960s poster style (match the attached reference).
+> A lone man seen from behind in a dark blazer with white piping stands on a terrace overlooking a
+> turquoise sea at sunset, raising his right hand in a salute: thumb and forefinger forming a circle,
+> other three fingers straight up. Anonymous figure, back of head only, no face. Coastal cliffs,
+> cypress trees, a white domed chapel, red bougainvillea on a stucco wall at the left edge. The words
+> "Be Seeing You" in large cream serif lettering centered in the sky. No cars, no vehicles, no
+> watermark. Keep the lower-middle of the image calm (a password field will sit there).
+
+If the driver lands on the left, add: "British car, right-hand drive, driver sits on the right like in the UK."
