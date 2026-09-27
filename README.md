@@ -19,36 +19,69 @@ architecture, scarlet, golden yellow, blue, green, and Rover crossing the Villag
 - A graphical Quickshell screensaver: a shaded white Rover crosses the virtual
   desktop, wobbles, changes direction, and makes a larger pass every third trip.
 - Omarchy generates bar, launcher, editor, browser, lock and other supported app
-  colors from `theme/colors.toml` using its installed templates. Four explicit
-  terminal palettes cover Alacritty, Ghostty, Foot and Kitty.
+  colors from `colors.toml` using its installed templates. The full install adds
+  explicit dark palettes for Alacritty, Ghostty, Foot, Kitty and Neovim.
+
+![The Prisoner on Omarchy](preview.png)
 
 ## Install
 
-Designed for the Quickshell-based Omarchy 4.0.4 installation. Requires Quickshell
-and the normal Omarchy commands already supplied by that release. Older Hypridle/
-Waybar Omarchy installations have not been tested. No extra fonts or packages.
+There are two ways to install. Pick the one that suits you.
+
+### Quick install: theme only
 
 ```sh
+omarchy theme install https://github.com/MkultraUSA/omarchy-the-prisoner
+```
+
+This gives you the palette, the wallpaper and the icons. Omarchy won't load
+terminal configs or Lua from a theme cloned from git, because those files can run
+code. So your terminals and Neovim are colored from `colors.toml`, which gives a
+light, cream look. Omarchy will say it "Ignored" those files. That's expected.
+
+### Full install: the complete experience (recommended)
+
+```sh
+git clone https://github.com/MkultraUSA/omarchy-the-prisoner
+cd omarchy-the-prisoner
 ./install.sh
 ```
 
-Installs to your home directory and applies the theme. Backups are stored under
-`~/.local/state/the-prisoner/`. No files under `/usr/share/omarchy` are changed.
-Keep `~/.local/bin` ahead of `/usr/share/omarchy/bin` in the login shell PATH, as on
-the tested machine. The wrapper intercepts the existing screensaver launcher only
-when `the-prisoner` is selected; all other themes use the original launcher and
-your existing screensaver customization.
+This adds everything the quick install leaves out:
+
+- The hand-tuned **dark terminal palettes** for Alacritty, Ghostty, Foot and Kitty,
+  plus a matching **dark Neovim** palette. These are cream text on charcoal with
+  Village accents.
+- The **Rover screensaver**.
+- The **seaside companion background** on the right-most monitor.
+
+Read `install.sh` before running it. It installs into your home directory only and
+never changes anything under `/usr/share/omarchy`. Backups are stored under
+`~/.local/state/the-prisoner/`. Keep `~/.local/bin` ahead of
+`/usr/share/omarchy/bin` in your login shell `PATH`. The screensaver wrapper only
+takes over while `the-prisoner` is the selected theme; every other theme keeps the
+original launcher and your own screensaver setup.
 
 ```sh
 prisoner-screensaver force       # Start now; move the mouse or press a key to exit
 prisoner-screensaver --stop      # Stop only the Rover screensaver
-./uninstall.sh                  # Restore the previous launcher and theme
+./uninstall.sh                   # Restore the previous launcher and theme
 ```
 
-The installer leaves the configured screensaver and lock deadlines unchanged.
-This is a decorative screensaver, not a lock screen. It uses Omarchy's existing
-`org.omarchy.screensaver` window identity so idle tracking continues to recognize
-its windows; the existing system-lock command terminates it when locking.
+The installer leaves your screensaver and lock timeouts unchanged. The screensaver
+is decorative, not a lock screen. It reuses Omarchy's `org.omarchy.screensaver`
+window identity, so idle tracking still recognizes it, and the normal lock
+command closes it when the screen locks.
+
+The seaside background is also available on its own from the Omarchy plugin
+marketplace:
+[`omarchy-the-prisoner-seaside`](https://github.com/MkultraUSA/omarchy-the-prisoner-seaside).
+
+### Requirements
+
+Built for Quickshell-based Omarchy 4.0.4 or later. It needs Quickshell and the
+standard Omarchy commands, but no extra fonts or packages. It hasn't been tested
+on older Omarchy releases that use Hypridle and Waybar.
 
 ## Design and sources
 
@@ -65,21 +98,23 @@ project is not affiliated with the programme's rights holders or Portmeirion.
 
 The wallpaper prompts are in `ASSET-PROMPTS.md`. Art was generated with the
 built-in image generation tool; the badge, bicycle and animation are editable
-code/vector artwork. The unused concept is retained locally under `concepts/`
+code/vector artwork. The unused concept is retained under `extras/concepts/`
 and is excluded from the release archive.
 
 ## Customization
 
-- Palette: `theme/colors.toml`
-- Terminal palettes: `theme/alacritty.toml`, `ghostty.conf`, `foot.ini`, `kitty.conf`
-- Desktop background: `theme/backgrounds/`
+- Palette: `colors.toml`
+- Terminal palettes (full install): `alacritty.toml`, `ghostty.conf`, `foot.ini`, `kitty.conf`
+- Dark Neovim palette (full install): `neovim.lua`
+- Desktop background: `backgrounds/`
+- Theme picker preview: `preview.png`
 - All shipped desktop and screensaver raster artwork is 3840×2160, so it can
   scale cleanly on common 1080p, 1440p, and 4K displays.
-- Companion display background: `plugin/the-prisoner-seaside/` renders
+- Companion display background: `extras/plugin/the-prisoner-seaside/` renders
   `village-seaside.png` permanently on the right-most display when two or more
   monitors are connected. Single-monitor setups retain the main Village image;
   the screensaver follows the same rule using its matching copy.
-- Rover motion, scale, and rendering: `screensaver/shell.qml`
+- Rover motion, scale, and rendering: `extras/screensaver/shell.qml`
 - A pass takes 34 seconds. Rover is 29% of desktop height normally and 67% on
   close passes. Frames update at approximately 30 fps.
 - The screensaver spans the virtual desktop using monitor coordinates. Disconnected
@@ -92,7 +127,7 @@ and is excluded from the release archive.
 - Two fullscreen windows verified: DP-1 at 1920×1080 and DP-3 at 1024×600,
   with DP-3 offset to desktop position 1920,480.
 - A 38-second live pass confirmed Rover appears on the right-hand display.
-  `preview/rover-DP-3.png` is the captured animation frame.
+  `extras/preview/rover-DP-3.png` is the captured animation frame.
 - Theme colors parsed; generated configurations had no unresolved placeholders;
   Hyprland reported no configuration errors.
 - Main text, accent and regular terminal colors have at least 4.5:1 contrast
