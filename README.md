@@ -106,7 +106,14 @@ and is excluded from the release archive.
 - Palette: `colors.toml`
 - Terminal palettes (full install): `alacritty.toml`, `ghostty.conf`, `foot.ini`, `kitty.conf`
 - Dark Neovim palette (full install): `neovim.lua`
-- Desktop background: `backgrounds/`
+- Desktop backgrounds: `backgrounds/`. There are five, and you can cycle through them with `omarchy theme bg next`:
+  `01-the-village`, `02-the-open-road` (the Seven on the coast road), `03-village-taxi-rank`
+  (Mini Mokes), `04-be-seeing-you-shadow` and `05-be-seeing-you`. Omarchy's lock screen shows the
+  current background, so choose `05` for a "Be Seeing You" lock screen.
+- Boot and login logo: `unlock.png` (the salute and wordmark, source `extras/assets/unlock.svg`).
+  Apply it to the boot and disk-unlock screen with `omarchy plymouth set by theme the-prisoner`
+  (asks for your password).
+- Icons: `extras/assets/salute.png` and `extras/assets/seven.png`, both transparent.
 - Theme picker preview: `preview.png`
 - All shipped desktop and screensaver raster artwork is 3840×2160, so it can
   scale cleanly on common 1080p, 1440p, and 4K displays.

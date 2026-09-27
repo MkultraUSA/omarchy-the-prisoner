@@ -36,3 +36,28 @@ Use case: stylized-concept. Asset: polished 16:9 desktop wallpaper, 3840x2160 if
 
 This draft was rejected: the mood was too dark and the sphere was incorrectly
 rendered as a basket balloon. It is retained under `extras/concepts/` only.
+
+## Additional wallpapers and icons (generated 2026-09-27)
+
+Use the same painterly, sunlit style as `backgrounds/01-the-village.png`: 3840×2160,
+no text, no logos, no watermark, no recognizable actor likeness. Keep the right third
+calm enough for desktop windows.
+
+1. **The open road.** A small yellow open-wheel, open-cockpit 1960s clubman sports car
+   with a green nose cone and green cycle wings (Lotus Super Seven Series II style,
+   **unbadged, no number plate**). It speeds along an empty coastal road towards an
+   Italianate village on a wooded headland. Late-afternoon light, long shadows,
+   hedgerows and stone walls. The driver is seen from behind and far away, just a
+   dark silhouette.
+2. **Village taxi rank.** Two small open Mini Moke-style utility cars with white and
+   candy-striped fringed canopies, parked beside a pastel colonnade, with striped
+   umbrellas and a penny-farthing leaning against a balustrade. Midday sun.
+3. **Be seeing you.** A gloved hand raised to the viewer in a salute, thumb and
+   forefinger forming a circle and the other fingers straight. Shown as a
+   shadow cast on a cream stucco wall beside a green shuttered window. No face.
+
+Delivered as `backgrounds/02-the-open-road.jpg`, `03-village-taxi-rank.jpg`,
+`04-be-seeing-you-shadow.jpg` and `05-be-seeing-you.jpg`, plus the transparent icons
+`extras/assets/salute.png` and `extras/assets/seven.png`. A small roundel on the car's nose
+and a side emblem in `02` were painted out so the car stays unbadged. Wallpapers are stored
+as quality-92 JPEG (visually identical, about 4.5 times smaller than PNG).

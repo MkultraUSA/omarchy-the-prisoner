@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="300" viewBox="0 0 1000 300">
+ <title>The Prisoner — boot and login logo</title>
+ <!-- The "Be seeing you" salute (salute.png). -->
+ <image x="30" y="20" width="260" height="260" xlink:href="salute.png"/>
+ <!-- Wordmark. -->
+ <text x="320" y="150" font-family="Noto Serif, Liberation Serif, serif" font-size="66" font-weight="600" letter-spacing="7" fill="#282e28">THE PRISONER</text>
+ <line x1="324" y1="178" x2="935" y2="178" stroke="#b82e36" stroke-width="4"/>
+ <text x="324" y="228" font-family="Noto Serif, Liberation Serif, serif" font-size="30" font-style="italic" letter-spacing="8" fill="#b82e36">BE SEEING YOU</text>
+</svg>

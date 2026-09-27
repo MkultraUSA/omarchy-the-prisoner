@@ -42,6 +42,7 @@ mkdir -p "$theme_dir" "$saver_dir" "$plugin_dir"
 # Copy only the theme files; the installed copy has no .git, so Omarchy keeps
 # the hand-tuned terminal palettes and dark Neovim colors.
 cp -a "$source_dir/colors.toml" "$source_dir/icons.theme" "$source_dir/preview.png" \
+  "$source_dir/unlock.png" "$source_dir/preview-unlock.png" \
   "$source_dir/alacritty.toml" "$source_dir/foot.ini" "$source_dir/ghostty.conf" "$source_dir/kitty.conf" \
   "$source_dir/neovim.lua" "$source_dir/backgrounds" "$theme_dir/"
 cp "$extras/screensaver/shell.qml" "$extras/screensaver/village-empty.png" "$extras/screensaver/village-seaside.png" "$saver_dir/"
